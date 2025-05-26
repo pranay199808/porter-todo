@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.service.EmployeeServiceImplTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-05-23T12:15:39.899Z" hostname="pranaytajne-MacBook-Pro" time="0.313">
+  <properties/>
+  <testcase name="getAllEmployees returns paginated list of employees()" classname="com.example.service.EmployeeServiceImplTest" time="0.221"/>
+  <testcase name="updateEmployee throws EmployeeNotFoundException when employee not found()" classname="com.example.service.EmployeeServiceImplTest" time="0.041"/>
+  <testcase name="updateEmployee successfully updates existing employee()" classname="com.example.service.EmployeeServiceImplTest" time="0.009"/>
+  <testcase name="getEmployeeById throws EmployeeNotFoundException when not found()" classname="com.example.service.EmployeeServiceImplTest" time="0.004"/>
+  <testcase name="getAllEmployees with last page returns partial list()" classname="com.example.service.EmployeeServiceImplTest" time="0.006"/>
+  <testcase name="createEmployee throws DuplicateEmailException when email exists()" classname="com.example.service.EmployeeServiceImplTest" time="0.004"/>
+  <testcase name="deleteEmployee successfully deletes existing employee()" classname="com.example.service.EmployeeServiceImplTest" time="0.002"/>
+  <testcase name="updateEmployee throws DuplicateEmailException when email exists for different employee()" classname="com.example.service.EmployeeServiceImplTest" time="0.005"/>
+  <testcase name="deleteEmployee throws EmployeeNotFoundException when employee not found()" classname="com.example.service.EmployeeServiceImplTest" time="0.003"/>
+  <testcase name="getAllEmployees with empty repository returns empty paginated response()" classname="com.example.service.EmployeeServiceImplTest" time="0.005"/>
+  <testcase name="getEmployeeById returns employee when found()" classname="com.example.service.EmployeeServiceImplTest" time="0.003"/>
+  <testcase name="createEmployee successfully creates new employee()" classname="com.example.service.EmployeeServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[17:45:39.925 [Test worker @coroutine#1] INFO  c.e.service.EmployeeServiceImplTest - Starting test: getAllEmployees returns paginated list of employees
+17:45:39.933 [Test worker @coroutine#1] DEBUG c.e.service.EmployeeServiceImplTest - Created test employees for page 2: [Employee(id=6, firstName=First6, lastName=Last6, email=employee6@example.com, department=Department6, position=Position6, salary=56000.0, phoneNumber=+1-234-567-0006, dateOfBirth=1990-01-6, startDate=2023-01-6), Employee(id=7, firstName=First7, lastName=Last7, email=employee7@example.com, department=Department7, position=Position7, salary=57000.0, phoneNumber=+1-234-567-0007, dateOfBirth=1990-01-7, startDate=2023-01-7), Employee(id=8, firstName=First8, lastName=Last8, email=employee8@example.com, department=Department8, position=Position8, salary=58000.0, phoneNumber=+1-234-567-0008, dateOfBirth=1990-01-8, startDate=2023-01-8), Employee(id=9, firstName=First9, lastName=Last9, email=employee9@example.com, department=Department9, position=Position9, salary=59000.0, phoneNumber=+1-234-567-0009, dateOfBirth=1990-01-9, startDate=2023-01-9), Employee(id=10, firstName=First10, lastName=Last10, email=employee10@example.com, department=Department10, position=Position10, salary=60000.0, phoneNumber=+1-234-567-0010, dateOfBirth=1990-01-10, startDate=2023-01-10)]
+17:45:40.102 [Test worker @coroutine#1] DEBUG c.e.service.EmployeeServiceImplTest - Executing getAllEmployees with pagination: page=2, pageSize=5
+17:45:40.104 [Test worker @coroutine#1] INFO  c.e.d.service.EmployeeServiceImpl - Fetching employees with pagination: page=2, pageSize=5
+17:45:40.107 [Test worker @coroutine#1] DEBUG c.e.d.service.EmployeeServiceImpl - Found 5 employees (page 2 of 3)
+17:45:40.108 [Test worker @coroutine#1] DEBUG c.e.service.EmployeeServiceImplTest - Verifying results
+17:45:40.116 [Test worker @coroutine#1] INFO  c.e.service.EmployeeServiceImplTest - Test completed successfully
+17:45:40.157 [Test worker @coroutine#10] INFO  c.e.d.service.EmployeeServiceImpl - Updating employee with id: 999, new data: Employee(id=999, firstName=First999, lastName=Last999, email=employee999@example.com, department=Department999, position=Position999, salary=1049000.0, phoneNumber=+1-234-567-0999, dateOfBirth=1990-01-999, startDate=2023-01-999)
+17:45:40.158 [Test worker @coroutine#10] ERROR c.e.d.service.EmployeeServiceImpl - Attempt to update non-existent employee with id: 999
+17:45:40.170 [Test worker @coroutine#17] INFO  c.e.d.service.EmployeeServiceImpl - Updating employee with id: 1, new data: Employee(id=1, firstName=First1, lastName=Last1, email=employee1@example.com, department=Department1, position=Senior Developer, salary=85000.0, phoneNumber=+1-234-567-0001, dateOfBirth=1990-01-1, startDate=2023-01-1)
+17:45:40.170 [Test worker @coroutine#17] INFO  c.e.d.service.EmployeeServiceImpl - Successfully updated employee with id: 1
+17:45:40.176 [Test worker @coroutine#29] INFO  c.e.d.service.EmployeeServiceImpl - Fetching employee with id: 999
+17:45:40.176 [Test worker @coroutine#29] ERROR c.e.d.service.EmployeeServiceImpl - Employee not found with id: 999
+17:45:40.179 [Test worker @coroutine#36] INFO  c.e.service.EmployeeServiceImplTest - Starting test: getAllEmployees with last page
+17:45:40.179 [Test worker @coroutine#36] DEBUG c.e.service.EmployeeServiceImplTest - Created test employees for last page: [Employee(id=11, firstName=First11, lastName=Last11, email=employee11@example.com, department=Department11, position=Position11, salary=61000.0, phoneNumber=+1-234-567-0011, dateOfBirth=1990-01-11, startDate=2023-01-11)]
+17:45:40.181 [Test worker @coroutine#36] DEBUG c.e.service.EmployeeServiceImplTest - Executing getAllEmployees for last page
+17:45:40.181 [Test worker @coroutine#36] INFO  c.e.d.service.EmployeeServiceImpl - Fetching employees with pagination: page=3, pageSize=5
+17:45:40.182 [Test worker @coroutine#36] DEBUG c.e.d.service.EmployeeServiceImpl - Found 1 employees (page 3 of 3)
+17:45:40.182 [Test worker @coroutine#36] DEBUG c.e.service.EmployeeServiceImplTest - Verifying results
+17:45:40.184 [Test worker @coroutine#36] INFO  c.e.service.EmployeeServiceImplTest - Test completed successfully
+17:45:40.186 [Test worker @coroutine#45] INFO  c.e.d.service.EmployeeServiceImpl - Creating new employee: Employee(id=0, firstName=First0, lastName=Last0, email=employee1@example.com, department=Department0, position=Position0, salary=50000.0, phoneNumber=+1-234-567-0000, dateOfBirth=1990-01-0, startDate=2023-01-0)
+17:45:40.186 [Test worker @coroutine#45] ERROR c.e.d.service.EmployeeServiceImpl - Attempt to create employee with existing email: employee1@example.com
+17:45:40.191 [Test worker @coroutine#50] INFO  c.e.d.service.EmployeeServiceImpl - Deleting employee with id: 1
+17:45:40.191 [Test worker @coroutine#50] INFO  c.e.d.service.EmployeeServiceImpl - Successfully deleted employee with id: 1
+17:45:40.195 [Test worker @coroutine#57] INFO  c.e.d.service.EmployeeServiceImpl - Updating employee with id: 1, new data: Employee(id=1, firstName=First1, lastName=Last1, email=employee2@example.com, department=Department1, position=Position1, salary=51000.0, phoneNumber=+1-234-567-0001, dateOfBirth=1990-01-1, startDate=2023-01-1)
+17:45:40.195 [Test worker @coroutine#57] ERROR c.e.d.service.EmployeeServiceImpl - Attempt to update employee with existing email: employee2@example.com
+17:45:40.199 [Test worker @coroutine#66] INFO  c.e.d.service.EmployeeServiceImpl - Deleting employee with id: 999
+17:45:40.199 [Test worker @coroutine#66] ERROR c.e.d.service.EmployeeServiceImpl - Failed to delete employee with id: 999
+17:45:40.201 [Test worker @coroutine#73] INFO  c.e.service.EmployeeServiceImplTest - Starting test: getAllEmployees with empty repository
+17:45:40.203 [Test worker @coroutine#73] DEBUG c.e.service.EmployeeServiceImplTest - Executing getAllEmployees with pagination
+17:45:40.203 [Test worker @coroutine#73] INFO  c.e.d.service.EmployeeServiceImpl - Fetching employees with pagination: page=1, pageSize=10
+17:45:40.204 [Test worker @coroutine#73] DEBUG c.e.d.service.EmployeeServiceImpl - Found 0 employees (page 1 of 0)
+17:45:40.204 [Test worker @coroutine#73] DEBUG c.e.service.EmployeeServiceImplTest - Verifying results
+17:45:40.205 [Test worker @coroutine#73] INFO  c.e.service.EmployeeServiceImplTest - Test completed successfully
+17:45:40.207 [Test worker @coroutine#82] INFO  c.e.d.service.EmployeeServiceImpl - Fetching employee with id: 1
+17:45:40.207 [Test worker @coroutine#82] DEBUG c.e.d.service.EmployeeServiceImpl - Found employee: Employee(id=1, firstName=First1, lastName=Last1, email=employee1@example.com, department=Department1, position=Position1, salary=51000.0, phoneNumber=+1-234-567-0001, dateOfBirth=1990-01-1, startDate=2023-01-1)
+17:45:40.211 [Test worker @coroutine#89] INFO  c.e.d.service.EmployeeServiceImpl - Creating new employee: Employee(id=0, firstName=First0, lastName=Last0, email=employee0@example.com, department=Department0, position=Position0, salary=50000.0, phoneNumber=+1-234-567-0000, dateOfBirth=1990-01-0, startDate=2023-01-0)
+17:45:40.211 [Test worker @coroutine#89] INFO  c.e.d.service.EmployeeServiceImpl - Successfully created employee with id: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
